@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.ReferralListActivity"
+    android:background="@color/coloAccent">
+
+    <include layout="@layout/toolbar"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/payu_dimen_5dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/no_referlist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/payu_dimen_250dp"
+                    android:src="@drawable/no_list"
+                    android:layout_margin="@dimen/payu_dimen_10dp"/>
+
+                <Button
+                    android:id="@+id/btn_referok"
+                    android:layout_width="@dimen/payu_dimen_150dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="@dimen/payu_dimen_10dp"
+                    android:background="@drawable/border_button"
+                    android:fontFamily="@font/lato"
+                    android:text="OK"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/referal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/payu_dimen_10dp"
+                android:layout_marginBottom="@dimen/payu_dimen_50dp"
+                android:layout_centerInParent="true"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_centerInParent="true"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/border_blue"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="start"
+                            android:weightSum="3"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="50dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/lato"
+                                android:text="Name "
+                                android:textColor="@color/black"
+                                android:textSize="15sp"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text=":"
+                                android:gravity="center"
+                                android:textColor="@color/black"
+                                android:textStyle="normal"
+                                android:textSize="15sp"
+                                android:padding="@dimen/payu_dimen_5dp"/>
+
+                            <TextView
+                                android:id="@+id/stu_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="jepson "
+                                android:fontFamily="@font/lato"
+                                android:textColor="@color/black"
+                                android:textStyle="normal"
+                                android:textSize="15sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="start"
+                            android:weightSum="3"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="50dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/lato"
+                                android:text="ID "
+                                android:textColor="@color/black"
+                                android:textSize="15sp"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text=":"
+                                android:gravity="center"
+                                android:textColor="@color/black"
+                                android:textStyle="normal"
+                                android:textSize="15sp"
+                                android:padding="@dimen/payu_dimen_5dp"/>
+
+                            <TextView
+                                android:id="@+id/stu_id"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="jepson "
+                                android:fontFamily="@font/lato"
+                                android:textColor="@color/black"
+                                android:textStyle="normal"
+                                android:textSize="15sp" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="10dp"
+                        android:layout_gravity="center"
+                        android:background="@color/black" />
+
+                </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <View
+                            android:id="@+id/view2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="1dp"
+                            android:layout_marginStart="@dimen/payu_dimen_50dp"
+                            android:layout_marginEnd="@dimen/payu_dimen_50dp"
+                            android:layout_gravity="center"
+                            android:background="@color/black" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
+
+                            <Button
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/payu_dimen_40dp"
+                                android:fontFamily="@font/lato"
+                                android:text="Direct Refer "
+                                android:layout_weight="1"
+                                android:layout_marginStart="@dimen/payu_dimen_20dp"
+                                android:layout_marginEnd="@dimen/payu_dimen_20dp"
+                                android:background="@color/whie"
+                                android:textColor="@color/white"
+                                android:textSize="15sp"
+                                android:textStyle="normal" />
+
+                            <Button
+                                android:layout_width="wrap_content"
+                                android:layout_height="40dp"
+                                android:fontFamily="@font/lato"
+                                android:text="Team Refer "
+                                android:layout_weight="1"
+                                android:layout_marginStart="@dimen/payu_dimen_20dp"
+                                android:layout_marginEnd="@dimen/payu_dimen_20dp"
+                                android:background="@color/whie"
+                                android:textColor="@color/white"
+                                android:textSize="15sp"
+                                android:textStyle="normal" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/referal_list"
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                android:layout_gravity="start"
+                                android:layout_height="wrap_content"
+                                tools:listitem="@layout/refer_list" />
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/teamrefer_list"
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="end"
+                                android:layout_height="wrap_content"
+                                tools:listitem="@layout/teamrefer_list" />
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>

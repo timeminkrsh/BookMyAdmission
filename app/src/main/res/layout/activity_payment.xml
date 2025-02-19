@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/coloAccent"
+    tools:context=".Activity.PaymentActivity">
+
+    <include layout="@layout/toolbar"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="@dimen/payu_dimen_5dp"
+                android:background="@color/transparent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    android:layout_margin="@dimen/payu_dimen_10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/lato"
+                        android:text="Booking Confirmation"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="start"
+                        android:layout_margin="@dimen/payu_dimen_5dp"
+                        android:weightSum="3"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="@dimen/payu_dimen_150dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/lato"
+                            android:text="University Name "
+                            android:textColor="@color/black"
+                            android:textSize="15sp"
+                            android:textStyle="normal" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text=":"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:textStyle="normal"
+                            android:textSize="15sp"
+                            android:padding="@dimen/payu_dimen_5dp"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="Anna University "
+                            android:textColor="@color/black"
+                            android:textStyle="normal"
+                            android:textSize="15sp"
+                            android:fontFamily="@font/lato"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="start"
+                        android:layout_margin="@dimen/payu_dimen_5dp"
+                        android:weightSum="3"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="@dimen/payu_dimen_150dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="College Name "
+                            android:textColor="@color/black"
+                            android:textStyle="normal"
+                            android:textSize="15sp"
+                            android:fontFamily="@font/lato"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text=":"
+                            android:textColor="@color/black"
+                            android:textStyle="normal"
+                            android:textSize="15sp"
+                            android:padding="@dimen/payu_dimen_5dp"/>
+
+                        <TextView
+                            android:id="@+id/acc_num"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="The American College "
+                            android:textColor="@color/black"
+                            android:textStyle="normal"
+                            android:textSize="15sp"
+                            android:fontFamily="@font/lato"/>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="start"
+                        android:layout_margin="@dimen/payu_dimen_5dp"
+                        android:weightSum="3"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="@dimen/payu_dimen_150dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="Course (Department) "
+                            android:textColor="@color/black"
+                            android:textStyle="normal"
+                            android:textSize="15sp"
+                            android:fontFamily="@font/lato"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:padding="@dimen/payu_dimen_5dp"
+                            android:text=":"
+                            android:textColor="@color/black"
+                            android:textSize="15sp"
+                            android:textStyle="normal" />
+
+                        <TextView
+                            android:id="@+id/bank_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="E.E.E "
+                            android:textColor="@color/black"
+                            android:textStyle="normal"
+                            android:textSize="15sp"
+                            android:fontFamily="@font/lato"/>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="start"
+                        android:layout_margin="@dimen/payu_dimen_5dp"
+                        android:weightSum="3"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="@dimen/payu_dimen_150dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="Quota "
+                            android:textColor="@color/black"
+                            android:textStyle="normal"
+                            android:textSize="15sp"
+                            android:fontFamily="@font/lato"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:padding="@dimen/payu_dimen_5dp"
+                            android:text=":"
+                            android:textColor="@color/black"
+                            android:textSize="15sp"
+                            android:textStyle="normal" />
+
+                        <TextView
+                            android:id="@+id/ifsc_code"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="Counselling "
+                            android:textColor="@color/black"
+                            android:textStyle="normal"
+                            android:textSize="15sp"
+                            android:fontFamily="@font/lato"/>
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="@dimen/payu_dimen_5dp"
+                android:background="@color/transparent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_margin="@dimen/payu_dimen_10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/payu_dimen_5dp"
+                            android:text="Choose Your Payment Method"
+                            android:textColor="@color/black"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/payu_dimen_5dp"
+                            android:fontFamily="@font/lato"
+                            android:text="Bank Details"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="start"
+                        android:layout_margin="@dimen/payu_dimen_5dp"
+                        android:weightSum="3"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="@dimen/payu_dimen_150dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="Account Holder Name "
+                            android:textColor="@color/black"
+                            android:textStyle="normal"
+                            android:textSize="15sp"
+                            android:fontFamily="@font/lato"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text=":"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:textStyle="normal"
+                            android:textSize="15sp"
+                            android:padding="@dimen/payu_dimen_5dp"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="Kumar "
+                            android:textColor="@color/black"
+                            android:textStyle="normal"
+                            android:textSize="15sp"
+                            android:fontFamily="@font/lato"/>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="start"
+                        android:layout_margin="@dimen/payu_dimen_5dp"
+                        android:weightSum="3"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="@dimen/payu_dimen_150dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="Account No "
+                            android:textColor="@color/black"
+                            android:textStyle="normal"
+                            android:textSize="15sp"
+                            android:fontFamily="@font/lato"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text=":"
+                            android:textColor="@color/black"
+                            android:textStyle="normal"
+                            android:textSize="15sp"
+                            android:padding="@dimen/payu_dimen_5dp"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="7788996655 "
+                            android:textColor="@color/black"
+                            android:textStyle="normal"
+                            android:textSize="15sp"
+                            android:fontFamily="@font/lato"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="start"
+                        android:layout_margin="@dimen/payu_dimen_5dp"
+                        android:weightSum="3"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="@dimen/payu_dimen_150dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="Bank Name "
+                            android:textColor="@color/black"
+                            android:textStyle="normal"
+                            android:textSize="15sp"
+                            android:fontFamily="@font/lato"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text=":"
+                            android:textColor="@color/black"
+                            android:textStyle="normal"
+                            android:textSize="15sp"
+                            android:padding="@dimen/payu_dimen_5dp"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="Indian Bank "
+                            android:textColor="@color/black"
+                            android:textStyle="normal"
+                            android:textSize="15sp"
+                            android:fontFamily="@font/lato"/>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="start"
+                        android:layout_margin="@dimen/payu_dimen_5dp"
+                        android:weightSum="3"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="@dimen/payu_dimen_150dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="IFSC Code "
+                            android:textColor="@color/black"
+                            android:textStyle="normal"
+                            android:textSize="15sp"
+                            android:fontFamily="@font/lato"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text=":"
+                            android:textColor="@color/black"
+                            android:textStyle="normal"
+                            android:textSize="15sp"
+                            android:padding="@dimen/payu_dimen_5dp"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="7788996655 "
+                            android:textColor="@color/black"
+                            android:textStyle="normal"
+                            android:textSize="15sp"
+                            android:fontFamily="@font/lato"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="start"
+                        android:weightSum="3"
+                        android:layout_margin="@dimen/payu_dimen_5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="@dimen/payu_dimen_150dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="Branch "
+                            android:textColor="@color/black"
+                            android:textStyle="normal"
+                            android:textSize="15sp"
+                            android:fontFamily="@font/lato"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text=":"
+                            android:textColor="@color/black"
+                            android:textStyle="normal"
+                            android:textSize="15sp"
+                            android:padding="@dimen/payu_dimen_5dp"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="Pallavaram "
+                            android:textColor="@color/black"
+                            android:textStyle="normal"
+                            android:textSize="15sp"
+                            android:fontFamily="@font/lato"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_continue"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="@dimen/payu_dimen_10dp"
+                android:background="@drawable/border_button"
+                android:fontFamily="@font/lato"
+                android:text="CONTINUE"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

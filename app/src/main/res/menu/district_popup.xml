@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/add_edu"
+        android:title="Chennai"/>
+
+    <item android:id="@+id/exit_edu"
+        android:title="Trichirappalli"/>
+
+    <item android:id="@+id/delete_edu"
+        android:title="Madurai"/>
+
+    <item android:id="@+id/delte_edu"
+        android:title="Sivagangai"/>
+
+</menu>

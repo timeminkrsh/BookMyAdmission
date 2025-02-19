@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/coloAccent"
+    tools:context=".Activity.WithdrawHistoryActivity">
+
+    <include layout="@layout/toolbar"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/payout_history"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/payu_dimen_10dp"
+            android:layout_marginEnd="@dimen/payu_dimen_10dp"
+            android:layout_marginBottom="@dimen/payu_dimen_50dp"
+            android:background="@color/transparent">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TableRow android:background="@color/colorGreen">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="S.NO"
+                        android:layout_gravity="center"
+                        android:textColor="@android:color/white"
+                        android:textSize="18sp" />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/payu_dimen_5dp"
+                        android:background="@color/black" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:layout_gravity="center"
+                        android:text="Payout Date"
+                        android:textColor="@android:color/white"
+                        android:textSize="18sp" />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/payu_dimen_5dp"
+                        android:background="@color/black" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:layout_gravity="center"
+                        android:text="Payout Amount"
+                        android:textColor="@android:color/white"
+                        android:textSize="18sp" />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/payu_dimen_5dp"
+                        android:background="@color/black" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:layout_gravity="center"
+                        android:text="Status "
+                        android:textColor="@android:color/white"
+                        android:textSize="18sp" />
+
+                </TableRow>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_payouthistory"
+                    android:layout_height="match_parent"
+                    android:visibility="visible"
+                    tools:listitem="@layout/withdraw_history" />
+
+            </TableLayout>
+.
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

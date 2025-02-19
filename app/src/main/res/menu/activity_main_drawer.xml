@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/home"
+            android:title="@string/menu_home"
+            />
+
+        <item
+            android:id="@+id/nav_scholar"
+            android:icon="@drawable/scholarship"
+            android:title="@string/menu_scholarship"
+             />
+
+        <item
+            android:id="@+id/nav_referal"
+            android:icon="@drawable/skills"
+            android:title="@string/menu_referalist"
+            />
+
+        <item
+            android:id="@+id/nav_bookings"
+            android:icon="@drawable/checklist"
+            android:title="@string/menu_bookings"
+            />
+
+        <item
+            android:id="@+id/nav_loan"
+            android:icon="@drawable/loan"
+            android:title="@string/menu_loan"
+            />
+
+        <item
+            android:id="@+id/nav_help"
+            android:icon="@drawable/user"
+            android:title="@string/menu_profile"
+             android:visible="false"/>
+
+        <item
+            android:id="@+id/nav_abroad"
+            android:icon="@drawable/travel"
+            android:title="@string/menu_abroad"
+            />
+
+        <item
+            android:id="@+id/nav_wallet"
+            android:icon="@drawable/wallet"
+            android:title="@string/menu_wallet"
+           />
+
+        <item
+            android:id="@+id/nav_withdraw"
+            android:icon="@drawable/withdrawal"
+            android:title="@string/menu_request"
+             />
+
+        <item
+            android:id="@+id/nav_product"
+            android:icon="@drawable/product_list"
+            android:title="@string/menu_product"
+            />
+
+        <item
+            android:id="@+id/nav_productbook"
+            android:icon="@drawable/booking_list"
+            android:title="@string/menu_productbook"
+             />
+
+        <item
+            android:id="@+id/nav_privacy"
+            android:icon="@drawable/policy"
+            android:title="@string/menu_privacy"
+             />
+
+        <item
+            android:id="@+id/nav_support"
+            android:icon="@drawable/headphones"
+            android:title="@string/menu_help"
+            />
+
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/logout"
+            android:title="@string/menu_logout"
+            />
+
+    </group>
+</menu>

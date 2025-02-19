@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Pressed state -->
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <solid android:color="#80CCCCCC"/> <!-- Adjust the alpha and color as needed -->
+            <!-- You can also add other attributes like corner radius, stroke, etc. -->
+        </shape>
+    </item>
+
+    <!-- Normal state -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#CCFFFFFF"/> <!-- Adjust the color as needed -->
+            <!-- You can also add other attributes like corner radius, stroke, etc. -->
+        </shape>
+    </item>
+
+</selector>

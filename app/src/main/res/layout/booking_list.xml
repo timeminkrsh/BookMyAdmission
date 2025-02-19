@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="@dimen/payu_dimen_5dp"
+        android:background="@color/transparent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_margin="@dimen/payu_dimen_10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="start"
+                android:weightSum="3"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="@dimen/payu_dimen_150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="University Name "
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text=":"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:textStyle="normal"
+                    android:textSize="15sp"
+                    android:padding="@dimen/payu_dimen_5dp"/>
+
+                <TextView
+                    android:id="@+id/book_uniname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text=" "
+                    android:textColor="@color/black"
+                    android:textStyle="normal"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="start"
+                android:weightSum="3"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="@dimen/payu_dimen_150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="College Name "
+                    android:textColor="@color/black"
+                    android:textStyle="normal"
+                    android:textSize="15sp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text=":"
+                    android:textColor="@color/black"
+                    android:textStyle="normal"
+                    android:textSize="15sp"
+                    android:padding="@dimen/payu_dimen_5dp"/>
+
+                <TextView
+                    android:id="@+id/book_clname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textStyle="normal"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="start"
+                android:weightSum="3"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="@dimen/payu_dimen_150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Course (Department) "
+                    android:textColor="@color/black"
+                    android:textStyle="normal"
+                    android:textSize="15sp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text=":"
+                    android:textColor="@color/black"
+                    android:textStyle="normal"
+                    android:textSize="15sp"
+                    android:padding="@dimen/payu_dimen_5dp"/>
+
+                <TextView
+                    android:id="@+id/book_course"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text=" "
+                    android:textColor="@color/black"
+                    android:textStyle="normal"
+                    android:textSize="15sp"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="start"
+                android:weightSum="3"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="@dimen/payu_dimen_150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Quota "
+                    android:textColor="@color/black"
+                    android:textStyle="normal"
+                    android:textSize="15sp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text=":"
+                    android:textColor="@color/black"
+                    android:textStyle="normal"
+                    android:textSize="15sp"
+                    android:padding="@dimen/payu_dimen_5dp"/>
+
+                <TextView
+                    android:id="@+id/book_quota"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textStyle="normal"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="start"
+                android:weightSum="3"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="@dimen/payu_dimen_150dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:text="Status "
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:padding="@dimen/payu_dimen_5dp"
+                    android:text=":"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:id="@+id/book_status"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text=" "
+                    android:textColor="@color/black"
+                    android:textStyle="normal"
+                    android:textSize="15sp"
+                    />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/depart_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:background="@color/white">
+
+                <ImageView
+                    android:layout_height="@dimen/payu_dimen_250dp"
+                    android:layout_width="match_parent"
+                    android:layout_margin="@dimen/payu_dimen_5dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/square"
+                    android:layout_gravity="center"
+                    android:id="@+id/product_img" />
+
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/payu_dimen_50dp"
+                    android:tooltipText="@string/app_name"
+                    style="@style/SpinnerTheme"
+                    android:visibility="gone"
+                    android:spinnerMode="dropdown"
+                    android:layout_margin="@dimen/payu_dimen_10dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/departlist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginStart="@dimen/payu_dimen_5dp"
+                android:layout_marginEnd="@dimen/payu_dimen_5dp"
+                android:layout_marginBottom="@dimen/payu_dimen_10dp"
+                android:weightSum="2"
+                android:background="@drawable/border_button"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lato"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:gravity="center"
+                    android:layout_weight="1.5"
+                    android:lines="2"
+                    android:text="Department List "
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <ImageView
+                    android:layout_width="@dimen/payu_dimen_30dp"
+                    android:layout_height="@dimen/payu_dimen_30dp"
+                    android:src="@drawable/bg_spinner"
+                    android:layout_marginEnd="@dimen/payu_dimen_5dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/fl_offer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/univ_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lato"
+                android:layout_marginStart="5dp"
+                android:layout_gravity="center"
+                android:text="How much you can pay the fees ? "
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+        </FrameLayout>
+
+
+
+    </FrameLayout>
+
+</LinearLayout>

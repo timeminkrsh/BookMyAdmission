@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/coloAccent"
+    tools:context=".Activity.MyWalletActivity">
+
+    <include layout="@layout/toolbar"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/payu_dimen_10dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/transparent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/payu_dimen_10dp"
+                    android:fontFamily="@font/lato"
+                    android:text="Your Wallet Amount"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:layout_marginTop="10dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/wallet_amount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/payu_dimen_10dp"
+                    android:layout_marginTop="@dimen/payu_dimen_10dp"
+                    android:layout_marginEnd="@dimen/payu_dimen_10dp"
+                    android:layout_marginBottom="@dimen/payu_dimen_20dp"
+                    android:fontFamily="@font/lato"
+                    android:background="@drawable/border_blue"
+                    android:text=" ₹ "
+                    android:textAlignment="center"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/no_translist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/payu_dimen_250dp"
+                    android:src="@drawable/no_list"
+                    android:layout_margin="@dimen/payu_dimen_10dp"/>
+
+                <Button
+                    android:id="@+id/btn_referok"
+                    android:layout_width="@dimen/payu_dimen_150dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="@dimen/payu_dimen_10dp"
+                    android:background="@drawable/border_button"
+                    android:fontFamily="@font/lato"
+                    android:text="OK"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/trans_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:layout_marginTop="@dimen/payu_dimen_10dp"
+                android:layout_marginBottom="@dimen/payu_dimen_50dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/payu_dimen_10dp"
+                    android:fontFamily="@font/lato"
+                    android:text="Your Transaction List"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:layout_marginTop="10dp"
+                    android:textStyle="bold" />
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp">
+
+                    <TableRow android:background="@color/colorGreen">
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/black" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:text="S.No"
+                            android:layout_gravity="center"
+                            android:textColor="@android:color/white"
+                            android:textSize="18sp" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/black" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:layout_gravity="center"
+                            android:text="Date"
+                            android:textColor="@android:color/white"
+                            android:textSize="18sp" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/black" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:layout_gravity="center"
+                            android:text="Action"
+                            android:textColor="@android:color/white"
+                            android:textSize="18sp" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/black" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:gravity="center_horizontal"
+                            android:padding="10sp"
+                            android:layout_gravity="center"
+                            android:text="Balance "
+                            android:textColor="@android:color/white"
+                            android:textSize="18sp" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/black" />
+
+                    </TableRow>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_transaction_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        tools:listitem="@layout/transactionlist" />
+
+                </TableLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>

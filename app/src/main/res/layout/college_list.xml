@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/col_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="@dimen/payu_dimen_5dp"
+        android:background="@color/transparent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="start"
+                android:weightSum="3"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="@dimen/payu_dimen_150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/lato"
+                    android:text="University Name "
+                    android:layout_marginStart="@dimen/payu_dimen_10dp"
+                    android:layout_marginTop="@dimen/payu_dimen_10dp"
+                    android:layout_marginBottom="@dimen/payu_dimen_5dp"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="normal" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/payu_dimen_5dp"
+                    android:background="@color/black" />
+
+                <TextView
+                    android:id="@+id/cl_uniname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text=" "
+                    android:textColor="@color/black"
+                    android:textStyle="normal"
+                    android:layout_marginEnd="@dimen/payu_dimen_70dp"
+                    android:layout_marginTop="@dimen/payu_dimen_10dp"
+                    android:layout_marginBottom="@dimen/payu_dimen_5dp"
+                    android:layout_marginStart="@dimen/payu_dimen_5dp"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/lato"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="start"
+                android:weightSum="3"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="@dimen/payu_dimen_150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/lato"
+                    android:text="College Name "
+                    android:layout_marginStart="@dimen/payu_dimen_10dp"
+                    android:layout_marginTop="@dimen/payu_dimen_5dp"
+                    android:layout_marginBottom="@dimen/payu_dimen_5dp"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="normal" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/payu_dimen_5dp"
+                    android:background="@color/black" />
+
+                <TextView
+                    android:id="@+id/cl_clname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textStyle="normal"
+                    android:layout_marginEnd="@dimen/payu_dimen_70dp"
+                    android:layout_marginTop="@dimen/payu_dimen_5dp"
+                    android:layout_marginBottom="@dimen/payu_dimen_5dp"
+                    android:layout_marginStart="@dimen/payu_dimen_5dp"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/lato"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="start"
+                android:weightSum="3"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="@dimen/payu_dimen_150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/lato"
+                    android:text="College Code "
+                    android:textColor="@color/black"
+                    android:layout_marginStart="@dimen/payu_dimen_10dp"
+                    android:layout_marginTop="@dimen/payu_dimen_5dp"
+                    android:layout_marginBottom="@dimen/payu_dimen_5dp"
+                    android:textSize="16sp"
+                    android:textStyle="normal" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/payu_dimen_5dp"
+                    android:background="@color/black" />
+
+                <TextView
+                    android:id="@+id/cl_code"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text=" "
+                    android:textColor="@color/black"
+                    android:textStyle="normal"
+                    android:layout_margin="@dimen/payu_dimen_5dp"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/lato"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/addr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="start"
+                android:weightSum="3"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="@dimen/payu_dimen_150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/lato"
+                    android:text="Address "
+                    android:layout_marginTop="@dimen/payu_dimen_5dp"
+                    android:layout_marginStart="@dimen/payu_dimen_10dp"
+                    android:layout_marginBottom="@dimen/payu_dimen_5dp"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="normal" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/payu_dimen_5dp"
+                    android:background="@color/black" />
+
+                <TextView
+                    android:id="@+id/cl_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text=" "
+                    android:textColor="@color/black"
+                    android:textStyle="normal"
+                    android:layout_marginTop="@dimen/payu_dimen_5dp"
+                    android:layout_marginStart="@dimen/payu_dimen_5dp"
+                    android:layout_marginBottom="@dimen/payu_dimen_5dp"
+                    android:layout_marginEnd="@dimen/payu_dimen_10dp"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/lato"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="start"
+                android:weightSum="3"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="@dimen/payu_dimen_150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/lato"
+                    android:text="Address "
+                    android:visibility="invisible"
+                    android:layout_marginTop="@dimen/payu_dimen_5dp"
+                    android:layout_marginStart="@dimen/payu_dimen_10dp"
+                    android:layout_marginBottom="@dimen/payu_dimen_10dp"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="normal" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/payu_dimen_5dp"
+                    android:background="@color/black" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="end">
+
+                    <TextView
+                        android:id="@+id/view_more"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:text=" View More "
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:textStyle="normal"
+                        android:background="@color/coloAccent"
+                        android:layout_marginTop="@dimen/payu_dimen_5dp"
+                        android:layout_marginStart="@dimen/payu_dimen_5dp"
+                        android:layout_marginBottom="@dimen/payu_dimen_5dp"
+                        android:layout_marginEnd="@dimen/payu_dimen_10dp"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/lato"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="@dimen/payu_dimen_70dp"
+        android:layout_height="@dimen/payu_dimen_70dp"
+        android:layout_margin="@dimen/payu_dimen_5dp"
+        android:layout_alignParentEnd="true"
+        app:cardCornerRadius="@dimen/payu_dimen_30dp">
+
+        <ImageView
+            android:id="@+id/col_logo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="8dp"
+            android:src="@drawable/college_logo"/>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

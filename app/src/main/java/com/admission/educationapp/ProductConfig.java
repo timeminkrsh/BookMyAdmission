@@ -1,0 +1,50 @@
+package com.admission.educationapp;
+
+public class ProductConfig {
+    public static String baseUrl = "https://bookmyadmission.org/api/";
+    public static String userlogin = (baseUrl + "userlogin.php");
+    public static String userotpverify = (baseUrl + "userotpverify.php");
+    public static String userregister= (baseUrl + "userregister.php");
+    public static String counselling_form= (baseUrl + "counselling_form.php");
+    public static String universitylist= (baseUrl + "universitylist.php");
+    public static String courselist= (baseUrl + "coureslist.php");
+    public static String course_list= (baseUrl + "course_list_new.php");
+    public static String districtlist= (baseUrl + "distic.php");
+    public static String department_names= (baseUrl + "department_names.php");
+    public static String departlist= (baseUrl + "depatrment_list.php");
+    public static String grouplist= (baseUrl + "grouplist.php");
+    public static String course_selection= (baseUrl + "insertcourse.php");
+    public static String update_counselling= (baseUrl + "update_counselling.php");
+    public static String counselling_update= (baseUrl + "counselling_update.php");
+    public static String bannerlist= (baseUrl + "bannerlist.php");
+    public static String college_list= (baseUrl + "college_list.php");
+    public static String collegelist= (baseUrl + "college_list_new.php");
+    public static String collegelist_selected= (baseUrl + "college_list_selected.php");
+    public static String college_banner= (baseUrl + "college_banner.php");
+    public static String dept_count= (baseUrl + "college_department.php");
+    public static String fees= (baseUrl + "college_fees.php");
+    public static String academic= (baseUrl + "students_marks_insert.php");
+    public static String seat_register= (baseUrl + "students_seat_register.php");
+    public static String support= (baseUrl + "contact.php");
+    public static String profile= (baseUrl + "profile.php");
+    public static String scholarship= (baseUrl + "scholarship_insert.php");
+    public static String education_loan= (baseUrl + "education_loan_insert.php");
+    public static String bank_list= (baseUrl + "bank_list.php");
+    public static String bookings= (baseUrl + "booking_list.php");
+    public static String booking_confirmation= (baseUrl + "booking_confirmation.php");
+    public static String refer= (baseUrl + "refer_list.php");
+    public static String team_refer= (baseUrl + "refer_list_team.php");
+    public static String counselling_count= (baseUrl + "Counselling_seat_count_list.php");
+    public static String management_count= (baseUrl + "Management_seat_count_list.php");
+    public static String abroad_courselist= (baseUrl + "coureslist_abroad.php");
+    public static String abroad_countrylist= (baseUrl + "country_list.php");
+    public static String abroad_register= (baseUrl + "aborad_register.php");
+    public static String withdraw= (baseUrl + "withdraw_request.php");
+    public static String wallet= (baseUrl + "wallet_amount_fetch.php");
+    public static String transcation_list= (baseUrl + "transcation_list.php");
+    public static String product_banner= (baseUrl + "products_banner.php");
+    public static String product_list= (baseUrl + "product_list.php");
+    public static String product_confirmation= (baseUrl + "place_order.php");
+    public static String product_bookinglist= (baseUrl + "place_order_list.php");
+
+}

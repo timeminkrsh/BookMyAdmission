@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/transparent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:gravity="center"
+            android:text="Referral "
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:textColor="@color/colorPrimary" />
+
+        <Button
+            android:id="@+id/direct_submit"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="@dimen/payu_dimen_20dp"
+            android:background="@drawable/border_button"
+            android:text="Direct"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:gravity="center_vertical"
+                android:text="Referral Code "
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:textColor="@color/colorPrimary" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:text=" (if available)"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimary" />
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/edt_referal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/border_blue"
+            android:focusableInTouchMode="true"
+            android:hint="Enter your referral"
+            android:inputType="number"
+            android:maxLength="6"
+            android:textStyle="bold"
+            android:textColor="@color/colorTextBlack"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/spt_submit"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="@dimen/payu_dimen_20dp"
+            android:background="@drawable/border_button"
+            android:text="SUBMIT"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</LinearLayout>

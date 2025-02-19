@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">Book My Admission</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_profile">My Profile</string>
+    <string name="menu_scholarship">Scholarship</string>
+    <string name="menu_deposit">Deposit</string>
+    <string name="menu_help">Help &amp; Support</string>
+    <string name="menu_terms">Terms &amp; Conditions</string>
+    <string name="menu_logout">Logout</string>
+    <string name="menu_about">About Us</string>
+    <string name="menu_loan">Education Loan</string>
+    <string name="menu_member">Members Add</string>
+    <string name="menu_referalist">Referal List</string>
+    <string name="menu_bookings">My Bookings</string>
+    <string name="menu_privacy">Privacy Policy</string>
+    <string name="menu_abroad">Abroad Study</string>
+    <string name="menu_wallet">My Wallet</string>
+    <string name="menu_productbook">Product Booking</string>
+    <string name="menu_product">Product list</string>
+    <string name="menu_withdraw">Withdraw History</string>
+    <string name="menu_request">Withdraw Request</string>
+
+    <string name="menu_bank">Bank Details</string>
+    <string name="error">error</string>
+    <string name="alert_yes">Yes</string>
+    <string name="alert_ok">Ok</string>
+
+    <string name="alert_no">No</string>
+    <string name="logout_success">LogOut</string>
+    <string name="alert_want_logout">Are you want to Logout?</string>
+
+    <string-array name="departments">
+        <item>Computer Science</item>
+        <item>Electrical Engineering</item>
+        <item>Mathematics</item>
+
+    </string-array>
+</resources>

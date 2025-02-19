@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.ProfileActivity"
+    android:background="@color/coloAccent">
+
+    <include layout="@layout/toolbar"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/layouts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:visibility="visible"
+                android:background="@color/transparent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/lato"
+                    android:layout_margin="@dimen/payu_dimen_5dp"
+                    android:text="Update Your Profile"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="@font/lato"
+                    android:gravity="center_vertical"
+                    android:text="Full Name"
+                    android:textSize="13sp"
+                    android:textColor="@color/colorPrimary" />
+
+                <EditText
+                    android:id="@+id/edt_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/border_blue"
+                    android:focusableInTouchMode="true"
+                    android:hint="Enter your full name"
+                    android:inputType="text"
+                    android:textColor="@color/colorTextBlack"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="@font/lato"
+                    android:gravity="center_vertical"
+                    android:text="Mobile Number"
+                    android:textSize="13sp"
+                    android:textColor="@color/colorPrimary" />
+
+                <EditText
+                    android:id="@+id/edt_phno"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/border_blue"
+                    android:focusableInTouchMode="true"
+                    android:fontFamily="@font/lato"
+                    android:hint="Enter your mobile number"
+                    android:inputType="phone"
+                    android:focusable="false"
+                    android:maxLength="10"
+                    android:textColor="@color/colorTextBlack"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="@font/lato"
+                    android:gravity="center_vertical"
+                    android:text="Email Address"
+                    android:textSize="13sp"
+                    android:textColor="@color/colorPrimary" />
+
+                <EditText
+                    android:id="@+id/edt_emailaddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/border_blue"
+                    android:focusableInTouchMode="true"
+                    android:fontFamily="@font/lato"
+                    android:hint="Enter your Email Address"
+                    android:inputType="textEmailAddress"
+                    android:textColor="@color/colorTextBlack"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="@font/lato"
+                    android:gravity="center_vertical"
+                    android:text="Address"
+                    android:textSize="13sp"
+                    android:textColor="@color/colorPrimary" />
+
+                <EditText
+                    android:id="@+id/edt_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/border_blue"
+                    android:focusableInTouchMode="true"
+                    android:fontFamily="@font/lato"
+                    android:hint="Enter your address"
+                    android:inputType="none|text|textCapSentences|textMultiLine"
+                    android:maxLength="350"
+                    android:maxLines="3"
+                    android:textColor="@color/colorTextBlack"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/btn_update"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginBottom="@dimen/payu_dimen_20dp"
+                    android:background="@drawable/border_button"
+                    android:fontFamily="@font/lato"
+                    android:text="UPDATE"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
