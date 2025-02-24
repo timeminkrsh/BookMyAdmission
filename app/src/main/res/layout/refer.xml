@@ -34,7 +34,7 @@
             android:background="@drawable/border_button"
             android:text="Direct"
             android:textAlignment="center"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -76,6 +76,7 @@
             android:maxLength="6"
             android:textStyle="bold"
             android:textColor="@color/colorTextBlack"
+            android:digits="0123456789"
             android:textSize="15sp" />
 
         <Button
@@ -90,7 +91,7 @@
             android:background="@drawable/border_button"
             android:text="SUBMIT"
             android:textAlignment="center"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="18sp"
             android:textStyle="bold" />
 

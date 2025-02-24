@@ -81,15 +81,9 @@ public class                                                                    
                         Toast.makeText(LoginActivity.this.getApplicationContext(), "Login Failed", Toast.LENGTH_LONG).show();
                         return;
                     }
-                    Bsession.getInstance().initialize(LoginActivity.this,"",
-                            "",
-                            jsonResponse.getString("user_mobile"),
-                            "","", "","",
-                            "", "", "","",
-                            "","","","","");
                     Toast.makeText(LoginActivity.this, "Logged in successfully", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(LoginActivity.this, OTPActivity.class);
-                    intent.putExtra("user_mobile", mobile);
+                    intent.putExtra("user_mobile", txt_mobile.getText().toString().trim());
                     startActivity(intent);
                     finish();
                 } catch (JSONException e) {

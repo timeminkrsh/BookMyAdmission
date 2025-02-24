@@ -97,6 +97,8 @@
                 android:drawableEnd="?android:attr/actionModeWebSearchDrawable"
                 android:textColor="@color/black"
                 android:textColorHint="@color/black"
+                android:focusable="false"
+                android:focusableInTouchMode="true"
                 android:textSize="15sp" />
 
             <LinearLayout

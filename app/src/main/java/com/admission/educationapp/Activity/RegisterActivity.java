@@ -68,7 +68,7 @@ public class RegisterActivity extends AppCompatActivity implements LocationListe
     EditText edt_emailaddress,edt_parent;
     TextView tvCurrentLocation;
     String mobile;
-    String name,parent,dob,refer="";
+    String name,parent,dob,refer="",phone;
     String email;
     String address, uni_name = " ", uni_id = " ";
     String selectedOption = " ";
@@ -98,26 +98,26 @@ public class RegisterActivity extends AppCompatActivity implements LocationListe
         txt_mode = findViewById(R.id.txt_mode);
         txt_unity = findViewById(R.id.txt_unity);
         tvCurrentLocation = findViewById(R.id.tv_currentlocation);
-        edt_phno.setText(Bsession.getInstance().getUser_mobile(RegisterActivity.this));
+        Bundle bundle = getIntent().getExtras();
+        if (bundle != null) {
+            refer = bundle.getString("refer");
+            phone = bundle.getString("mobile");
+            edt_phno.setText(phone);
+        }
 
         ProgressDialog progressDialog2 = new ProgressDialog(this);
         this.progressDialog = progressDialog2;
         progressDialog2.setMessage("Registering.....");
 
-        Bundle bundle = getIntent().getExtras();
-        if (bundle != null) {
-            refer = bundle.getString("refer");
-            System.out.println("refer=="+refer);
-        }
-
 
         statusCheck();
-        //universityList();
         final Calendar calendar = Calendar.getInstance();
         final int day = calendar.get(Calendar.DAY_OF_MONTH);
         final int year = calendar.get(Calendar.YEAR);
         final int month = calendar.get(Calendar.MONTH);
+
         datePicker = new DatePickerDialog(RegisterActivity.this);
+
         et_date.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -127,11 +127,16 @@ public class RegisterActivity extends AppCompatActivity implements LocationListe
                         et_date.setText(dayOfMonth + "/" + (month + 1) + "/" + year);
                     }
                 }, year, month, day);
-                datePicker.getDatePicker().setMaxDate(System.currentTimeMillis() - 1000);
-                // show the dialog
+
+                Calendar minAgeCalendar = Calendar.getInstance();
+                minAgeCalendar.add(Calendar.YEAR, -17); // User should be at least 17 years old
+                datePicker.getDatePicker().setMaxDate(minAgeCalendar.getTimeInMillis());
+
+                // Show the dialog
                 datePicker.show();
             }
         });
+
 
         btn_register.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
@@ -144,7 +149,7 @@ public class RegisterActivity extends AppCompatActivity implements LocationListe
                 RegisterActivity registerActivity3 = RegisterActivity.this;
                 registerActivity3.address = registerActivity3.edtAddress.getText().toString();
                 RegisterActivity registerActivity4 = RegisterActivity.this;
-                registerActivity4.email = registerActivity4.edt_emailaddress.getText().toString();
+                email = registerActivity4.edt_emailaddress.getText().toString();
                 dob = et_date.getText().toString();
                 parent = edt_parent.getText().toString();
                 System.out.println("bnbn" + refer);
@@ -164,6 +169,9 @@ public class RegisterActivity extends AppCompatActivity implements LocationListe
                 } else if (email.isEmpty()) {
                     edt_emailaddress.setError("*Enter your email");
                     edt_emailaddress.requestFocus();
+                }  else if (!isValidEmail(email)) {
+                    edt_emailaddress.setError("*Enter a valid email");
+                    edt_emailaddress.requestFocus();
                 } else if (selectedOption.isEmpty()) {
                     txt_mode.setError("*Enter");
                     txt_mode.requestFocus();
@@ -177,6 +185,7 @@ public class RegisterActivity extends AppCompatActivity implements LocationListe
                 }
             }
         });
+
         tvCurrentLocation.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 tvCurrentLocation.startAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_in));
@@ -191,6 +200,9 @@ public class RegisterActivity extends AppCompatActivity implements LocationListe
                 }
             }
         });
+    }
+    private boolean isValidEmail(String email) {
+        return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
     }
     private boolean checkLocationPermission() {
         return ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED
@@ -310,6 +322,7 @@ public class RegisterActivity extends AppCompatActivity implements LocationListe
                         BackAlertDialog.setTitle((CharSequence) "Register Alert");
                         BackAlertDialog.setMessage((CharSequence) "Registeration Completed Successfully");
                         BackAlertDialog.setIcon((int) R.drawable.logo1);
+                        BackAlertDialog.setCancelable(false); // Prevent dialog from closing when clicking outside
                         BackAlertDialog.setNegativeButton((CharSequence) "OK", (DialogInterface.OnClickListener) new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
                                 LayoutInflater inflater = getLayoutInflater();
@@ -320,6 +333,7 @@ public class RegisterActivity extends AppCompatActivity implements LocationListe
 
                                 AlertDialog.Builder BackAlertDialog1 = new AlertDialog.Builder(RegisterActivity.this);
                                 BackAlertDialog1.setView(dialogLayout);
+                                BackAlertDialog1.setCancelable(false); // Prevent dialog from closing when clicking outside
 
                                 radiogroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
                                     @Override
@@ -367,7 +381,7 @@ public class RegisterActivity extends AppCompatActivity implements LocationListe
                         BackAlertDialog.show();*/
 
                     } else {
-                        Toast.makeText(getApplicationContext(), "Register Failed", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(),jsonResponse.getString("text") , Toast.LENGTH_LONG).show();
                     }
                     System.out.println("Response=="+response);
                 } catch (JSONException e) {

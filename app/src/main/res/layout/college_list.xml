@@ -18,49 +18,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="start"
-                android:weightSum="3"
-                android:orientation="horizontal">
 
-                <TextView
-                    android:layout_width="@dimen/payu_dimen_150dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:fontFamily="@font/lato"
-                    android:text="University Name "
-                    android:layout_marginStart="@dimen/payu_dimen_10dp"
-                    android:layout_marginTop="@dimen/payu_dimen_10dp"
-                    android:layout_marginBottom="@dimen/payu_dimen_5dp"
-                    android:textColor="@color/black"
-                    android:textSize="16sp"
-                    android:textStyle="normal" />
-
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="@dimen/payu_dimen_5dp"
-                    android:background="@color/black" />
-
-                <TextView
-                    android:id="@+id/cl_uniname"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text=" "
-                    android:textColor="@color/black"
-                    android:textStyle="normal"
-                    android:layout_marginEnd="@dimen/payu_dimen_70dp"
-                    android:layout_marginTop="@dimen/payu_dimen_10dp"
-                    android:layout_marginBottom="@dimen/payu_dimen_5dp"
-                    android:layout_marginStart="@dimen/payu_dimen_5dp"
-                    android:textSize="16sp"
-                    android:fontFamily="@font/lato"/>
-
-            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -106,7 +64,49 @@
 
 
             </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="start"
+                android:weightSum="3"
+                android:orientation="horizontal">
 
+                <TextView
+                    android:layout_width="@dimen/payu_dimen_150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/lato"
+                    android:text="University Name "
+                    android:layout_marginStart="@dimen/payu_dimen_10dp"
+                    android:layout_marginTop="@dimen/payu_dimen_10dp"
+                    android:layout_marginBottom="@dimen/payu_dimen_5dp"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="normal" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/payu_dimen_5dp"
+                    android:background="@color/black" />
+
+                <TextView
+                    android:id="@+id/cl_uniname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text=" "
+                    android:textColor="@color/black"
+                    android:textStyle="normal"
+                    android:layout_marginEnd="@dimen/payu_dimen_70dp"
+                    android:layout_marginTop="@dimen/payu_dimen_10dp"
+                    android:layout_marginBottom="@dimen/payu_dimen_5dp"
+                    android:layout_marginStart="@dimen/payu_dimen_5dp"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/lato"/>
+
+            </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

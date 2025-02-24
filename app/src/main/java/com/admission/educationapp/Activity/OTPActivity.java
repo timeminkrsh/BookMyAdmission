@@ -45,6 +45,11 @@ public class OTPActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_otpactivity);
 
+        Bundle bundle = getIntent().getExtras();
+        if (bundle != null) {
+            phone = bundle.getString("user_mobile");
+            System.out.println("refer=="+phone);
+        }
         btn_verify = findViewById(R.id.btn_verify);
         pinview = findViewById(R.id.pinview);
 
@@ -58,16 +63,12 @@ public class OTPActivity extends AppCompatActivity {
                 String otpstr = String.valueOf(pinview.getText().toString());
                 otp = otpstr;
                 if (otpstr != null && otpstr != "" && otpstr.length() >= 4) {
-
-                    phone = Bsession.getInstance().getUser_mobile(OTPActivity.this);
-                    System.out.println("phone;;" + phone);
                     final Map<String, String> params = new HashMap<>();
                     progressDialog.show();
 
                     String para_str = "?user_mobile=" + phone;
                     String para_str1 = "&otp=" + pinview.getText().toString();
                     String baseUrl = ProductConfig.userotpverify + para_str + para_str1;
-
                     StringRequest jsObjRequest = new StringRequest(Request.Method.GET, baseUrl, new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {
@@ -75,40 +76,33 @@ public class OTPActivity extends AppCompatActivity {
                             try {
                                 progressDialog.dismiss();
                                 JSONObject jsonResponse = new JSONObject(response);
-
                                 if (jsonResponse.has("status") && jsonResponse.getString("status").equals("0")) {
-                                    Bsession.getInstance().initialize(OTPActivity.this,
-                                            jsonResponse.getString("user_id"),
-                                            "",
-                                            jsonResponse.getString("user_mobile"),
-                                            "", "","","",
-                                            "", "", "",
-                                            "", "","","","","");
-                                    phone = jsonResponse.getString("user_mobile");
                                     Toast.makeText(OTPActivity.this, "OTP Entered Successfully", Toast.LENGTH_SHORT).show();
                                     LayoutInflater inflater = getLayoutInflater();
                                     View dialogLayout = inflater.inflate(R.layout.refer, null);
-
                                     EditText referal = dialogLayout.findViewById(R.id.edt_referal);
                                     Button btn = dialogLayout.findViewById(R.id.spt_submit);
                                     Button btn1 = dialogLayout.findViewById(R.id.direct_submit);
-
                                     AlertDialog.Builder BackAlertDialog = new AlertDialog.Builder(OTPActivity.this);
                                     BackAlertDialog.setView(dialogLayout);
-
+                                    BackAlertDialog.setCancelable(false); // Prevent dialog from closing when clicking outside
                                     btn1.setOnClickListener(new View.OnClickListener() {
                                         @Override
                                         public void onClick(View view) {
-                                            startActivity(new Intent(OTPActivity.this,ReferalActivity.class));
+                                            Intent i = new Intent(OTPActivity.this, ReferalActivity.class);
+                                            i.putExtra("mobile", phone);
+                                            System.out.println("refer=="+phone);
+                                            startActivity(i);
                                         }
                                     });
-
                                     btn.setOnClickListener(new View.OnClickListener() {
                                         @Override
                                         public void onClick(View view) {
                                             Intent i = new Intent(OTPActivity.this, RegisterActivity.class);
                                             i.putExtra("refer", referal.getText().toString());
+                                            i.putExtra("mobile", phone);
                                             System.out.println("refer=="+referal.getText().toString());
+                                            System.out.println("refer=="+phone);
                                             startActivity(i);
                                         }
                                     });
@@ -120,10 +114,12 @@ public class OTPActivity extends AppCompatActivity {
                                             jsonResponse.getString("user_mobile"),
                                             jsonResponse.getString("user_address"),
                                             jsonResponse.getString("user_email"),
-                                            jsonResponse.getString("university"), "", "","","", "",
-                                            "", "","","",jsonResponse.getString("12th_marks"));
+                                            jsonResponse.getString("university"), "", "","","", "",jsonResponse.getString("college_id")
+                                            , "","","",jsonResponse.getString("12th_marks"));
                                     Toast.makeText(OTPActivity.this, "OTP Entered Successfully", Toast.LENGTH_SHORT).show();
-                                    Intent i1 = new Intent(OTPActivity.this, UniversitySelectionActivity.class);
+
+
+                                    Intent i1 = new Intent(OTPActivity.this, HomeActivity.class);
                                     startActivity(i1);
                                     finish();
                                 }

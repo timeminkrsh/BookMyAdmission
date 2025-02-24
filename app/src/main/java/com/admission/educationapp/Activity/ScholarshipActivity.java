@@ -98,25 +98,28 @@ public class ScholarshipActivity extends AppCompatActivity {
                     edt_phno.setError("*Enter Valid Mobile Number");
                     edt_phno.requestFocus();
                 } else if (scheme.isEmpty()) {
-                    edt_scheme.setError("*Enter your address");
+                    edt_scheme.setError("*Enter a scheme name");
                     edt_scheme.requestFocus();
                 }else if (email.isEmpty()) {
                     edt_emailaddress.setError("*Enter your email");
                     edt_emailaddress.requestFocus();
                 }else if (schtype.isEmpty()) {
-                    edt_schtype.setError("*Enter your scholarship type");
+                    edt_schtype.setError("*Enter scholarship grade");
                     edt_schtype.requestFocus();
                 }else if (schcategory.isEmpty()) {
-                    edt_schcategory.setError("*Enter your scholarship type");
+                    edt_schcategory.setError("*Enter your Category");
                     edt_schcategory.requestFocus();
                 }else if (schgrade.isEmpty()) {
                     edt_schgrade.setError("*Enter your scholarship type");
                     edt_schgrade.requestFocus();
                 }else if (ifsc.isEmpty()) {
-                    edt_ifsc.setError("*Enter your scholarship type");
+                    edt_ifsc.setError("*Enter IFSC Code");
+                    edt_ifsc.requestFocus();
+                }else if (ifsc.length()<11) {
+                    edt_ifsc.setError("*Enter a valid IFSC Code");
                     edt_ifsc.requestFocus();
                 }else if (bank.isEmpty()) {
-                    edt_bank.setError("*Enter your scholarship type");
+                    edt_bank.setError("*Enter Bank Name");
                     edt_bank.requestFocus();
                 } else if (name == null || name == "" || email == ""|| email == null || mobile == null || mobile == "" ||
                         scheme == null || scheme == "" || bank == null || bank == ""|| ifsc == null || ifsc == ""||

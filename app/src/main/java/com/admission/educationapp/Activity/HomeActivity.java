@@ -15,11 +15,13 @@ import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentSender;
+import android.graphics.Rect;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewTreeObserver;
 import android.widget.AdapterView;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
@@ -74,9 +76,9 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     ImageView menu;
     ProgressDialog progressDialog;
     RecyclerView college_list;
-    LinearLayout home_layout,referal,about,counselling;
-    TextView home_txt,referal_txt,about_txt,counselling_txt;
-    Button district,course;
+    LinearLayout home_layout, referal, about, counselling;
+    TextView home_txt, referal_txt, about_txt, counselling_txt;
+    Button district, course;
     public AppUpdateManager mAppUpdateManager;
     List<CollegeModel> collegelist = new ArrayList<>();
     public ArrayList<CollegeModel> collegelists = new ArrayList<>();
@@ -101,10 +103,10 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        search_txt=findViewById(R.id.search_txt);
+        search_txt = findViewById(R.id.search_txt);
         search_txt.requestFocus();
         menu = findViewById(R.id.menu);
-        drawer = findViewById(R.id.drawer_layout);
+        drawer = findViewById(R.id.content);
         home_layout = findViewById(R.id.home_layout);
         counselling = findViewById(R.id.counselling);
         college_list = findViewById(R.id.college_list);
@@ -116,6 +118,26 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         referal_txt = findViewById(R.id.referal_txt);
         about_txt = findViewById(R.id.about_txt);
         counselling_txt = findViewById(R.id.counselling_txt);
+
+        navigationView = findViewById(R.id.nav_view);
+        final View rootView = findViewById(android.R.id.content);
+        rootView.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+            @Override
+            public void onGlobalLayout() {
+                Rect r = new Rect();
+                rootView.getWindowVisibleDisplayFrame(r);
+                int screenHeight = rootView.getRootView().getHeight();
+                int keypadHeight = screenHeight - r.bottom;
+
+                // If the keyboard is visible, hide BottomNavigationView
+                if (keypadHeight > screenHeight * 0.15) {
+                    navigationView.setVisibility(View.GONE);
+                } else {
+                    navigationView.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
 
         ProgressDialog progressDialog2 = new ProgressDialog(this);
         this.progressDialog = progressDialog2;
@@ -130,7 +152,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                     if (result.updateAvailability() == 2 && result.isUpdateTypeAllowed(0)) {
                         try {
                             // Toast.makeText(MainActivity.this, "UPDATESTATUS1", 1).show();
-                           mAppUpdateManager.startUpdateFlowForResult(result, 0, (Activity) HomeActivity.this, 100);
+                            mAppUpdateManager.startUpdateFlowForResult(result, 0, (Activity) HomeActivity.this, 100);
                         } catch (IntentSender.SendIntentException e) {
                             e.printStackTrace();
                         }
@@ -157,8 +179,8 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         });
         //this.mAppUpdateManager.registerListener(this.installStateUpdatedListener);
 
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        navigationView = findViewById(R.id.nav_view);
+
+        DrawerLayout drawer = findViewById(R.id.content);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
@@ -196,7 +218,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 about.setBackgroundResource(R.color.white);
                 Intent sharingIntent = new Intent(Intent.ACTION_SEND);
                 sharingIntent.setType("text/plain");
-                String shareBody = "APP LINK : " + "https://play.google.com/store/apps/details?id=com.admission.educationapp"+ "\n" + "Refer-ID = " + Bsession.getInstance().getUser_id(HomeActivity.this);
+                String shareBody = "APP LINK : " + "https://play.google.com/store/apps/details?id=com.admission.educationapp" + "\n" + "Refer-ID = " + Bsession.getInstance().getUser_id(HomeActivity.this);
                 sharingIntent.putExtra(Intent.EXTRA_SUBJECT, "Subject Here");
                 sharingIntent.putExtra(Intent.EXTRA_TEXT, shareBody);
                 startActivity(Intent.createChooser(sharingIntent, "Share via"));
@@ -265,10 +287,10 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         String userid = Bsession.getInstance().getUser_id(getApplicationContext());
         collegelists = new ArrayList<>();
         final Map<String, String> params = new HashMap<>();
-        String para1="?university_id=" + Bsession.getInstance().getuniversity_id(this);
-        String para2="&course_id=" + Bsession.getInstance().getcourse_id(this);
-        String para3="&district_id=" + Bsession.getInstance().getdistrict_id(this);
-        String baseUrl = ProductConfig.collegelist + para1 + para2 +para3 ;
+        String para1 = "?university_id=" + Bsession.getInstance().getuniversity_id(this);
+        String para2 = "&course_id=" + Bsession.getInstance().getcourse_id(this);
+        String para3 = "&district_id=" + Bsession.getInstance().getdistrict_id(this);
+        String baseUrl = ProductConfig.collegelist + para1 + para2 + para3;
         StringRequest jsObjRequest = new StringRequest(Request.Method.GET, baseUrl, new Response.Listener<String>() {
             public void onResponse(String response) {
                 Log.e("Response", response.toString());
@@ -290,7 +312,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                             model.setCol_description(jsonObject.getString("description"));
                             model.setCol_image(jsonObject.getString("image"));
                             collegelists.add(model);
-                            suggestionAdapter = new SuggestionAdapter(HomeActivity.this, R.layout.suggestion_items,collegelists);
+                            suggestionAdapter = new SuggestionAdapter(HomeActivity.this, R.layout.suggestion_items, collegelists);
                             search_txt.setAdapter(suggestionAdapter);
 
                             search_txt.setThreshold(1);
@@ -301,22 +323,22 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                                             search_txt.setText(model.getCol_name());
                                             CollegeModel model = collegelists.get(position);
                                             search_txt.setText("");
-                                            String suggestion_title=  collegelists.get(position).getCol_id();
-                                            String name=  collegelists.get(position).getCol_name();
-                                            String address=  collegelists.get(position).getCol_address();
-                                            String code=  collegelists.get(position).getCol_code();
-                                            String univer=  collegelists.get(position).getUni_name();
-                                            String des=  collegelists.get(position).getCol_description();
-                                            String weburl=  collegelists.get(position).getCol_weburl();
+                                            String suggestion_title = collegelists.get(position).getCol_id();
+                                            String name = collegelists.get(position).getCol_name();
+                                            String address = collegelists.get(position).getCol_address();
+                                            String code = collegelists.get(position).getCol_code();
+                                            String univer = collegelists.get(position).getUni_name();
+                                            String des = collegelists.get(position).getCol_description();
+                                            String weburl = collegelists.get(position).getCol_weburl();
 
-                                            Intent intent=new Intent(HomeActivity.this,CollegeDetailActivity.class);
-                                            intent.putExtra("id",suggestion_title);
-                                            intent.putExtra("name",name);
-                                            intent.putExtra("address",address);
-                                            intent.putExtra("code",code);
-                                            intent.putExtra("univer",univer);
-                                            intent.putExtra("des",des);
-                                            intent.putExtra("weburl",weburl);
+                                            Intent intent = new Intent(HomeActivity.this, CollegeDetailActivity.class);
+                                            intent.putExtra("id", suggestion_title);
+                                            intent.putExtra("name", name);
+                                            intent.putExtra("address", address);
+                                            intent.putExtra("code", code);
+                                            intent.putExtra("univer", univer);
+                                            intent.putExtra("des", des);
+                                            intent.putExtra("weburl", weburl);
                                             startActivity(intent);
                                         }
                                     });
@@ -343,19 +365,19 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
                             message = "The server could not be found. Please try again after some time!!";
                         } else if (error instanceof AuthFailureError) {
-                            Toast.makeText(getApplicationContext(),"Cannot connect to Internet...Please check your connection!" , Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(), "Cannot connect to Internet...Please check your connection!", Toast.LENGTH_LONG).show();
 
                             message = "Cannot connect to Internet...Please check your connection!";
                         } else if (error instanceof ParseError) {
-                            Toast.makeText(getApplicationContext(),"Parsing error! Please try again after some time!!" , Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(), "Parsing error! Please try again after some time!!", Toast.LENGTH_LONG).show();
 
                             message = "Parsing error! Please try again after some time!!";
                         } else if (error instanceof NoConnectionError) {
-                            Toast.makeText(getApplicationContext(),"Cannot connect to Internet...Please check your connection!" , Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(), "Cannot connect to Internet...Please check your connection!", Toast.LENGTH_LONG).show();
 
                             message = "Cannot connect to Internet...Please check your connection!";
                         } else if (error instanceof TimeoutError) {
-                            Toast.makeText(getApplicationContext(),"Connection TimeOut! Please check your internet connection." , Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(), "Connection TimeOut! Please check your internet connection.", Toast.LENGTH_LONG).show();
 
                             message = "Connection TimeOut! Please check your internet connection.";
                         }
@@ -375,7 +397,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         final Map<String, String> params = new HashMap<>();
         String baseUrl = ProductConfig.bannerlist;
         sliderlist = new ArrayList<>();
-        System.out.println("base=="+baseUrl);
+        System.out.println("base==" + baseUrl);
         final StringRequest jsObjRequest = new StringRequest(Request.Method.GET, baseUrl, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
@@ -432,12 +454,10 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             recycleimage.smoothScrollToPosition(currentPosition);
         }
     }
-
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
         Intent intent = null;
-
         if (id == R.id.nav_home) {
             intent = new Intent(getApplicationContext(), HomeActivity.class);
         } else if (id == R.id.nav_scholar) {
@@ -454,7 +474,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             intent = new Intent(getApplicationContext(), WithdrawRequestActivity.class);
         } else if (id == R.id.nav_product) {
             intent = new Intent(getApplicationContext(), ProductlistActivity.class);
-        }else if (id == R.id.nav_productbook) {
+        } else if (id == R.id.nav_productbook) {
             intent = new Intent(getApplicationContext(), ProductBookingListActivity.class);
         } else if (id == R.id.nav_bookings) {
             intent = new Intent(getApplicationContext(), MyBookingsActivity.class);
@@ -462,23 +482,24 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             intent = new Intent(getApplicationContext(), PrivacyPolicyActivity.class);
         } else if (id == R.id.nav_help) {
             intent = new Intent(getApplicationContext(), ProfileActivity.class);
+        }else if (id == R.id.nav_support) {
+            intent = new Intent(getApplicationContext(), HelpAndSupportActivity.class);
         } else if (id == R.id.nav_logout) {
             logoutAlert();
         }
         if (intent != null) {
             startActivity(intent);
         }
-
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
 
-    private void collegelist(){
+    private void collegelist() {
         final Map<String, String> params = new HashMap<>();
-        String para1="?college_id=" + Bsession.getInstance().getCollege_id(this);
-        String para2="&college_id=" + Bsession.getInstance().getCollege_id(this);
-        System.out.println("selectedIds=="+para1);
-        String baseUrl = ProductConfig.collegelist_selected + para1 +para2 ;
+        String para1 = "?college_id=" + Bsession.getInstance().getCollege_id(this);
+        System.out.println("selectedIds==" + para1);
+        String baseUrl = ProductConfig.collegelist_selected + para1 ;
+        System.out.println("selectedIds==" + baseUrl);
         collegelist = new ArrayList<>();
         progressDialog.show();
         final StringRequest jsObjRequest = new StringRequest(Request.Method.GET, baseUrl, new Response.Listener<String>() {
@@ -509,8 +530,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                         CollegeAdapter packageListAdapter = new CollegeAdapter(HomeActivity.this, collegelist);
                         college_list.setAdapter(packageListAdapter);
                         college_list.setHasFixedSize(true);
-                    } else {
-                        Toast.makeText(HomeActivity.this, "College list not found", Toast.LENGTH_SHORT).show();
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -560,7 +579,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     @SuppressLint("MissingSuperCall")
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.content);
         if (drawer.isDrawerOpen((int) GravityCompat.START)) {
             drawer.closeDrawer((int) GravityCompat.START);
             return;

@@ -32,7 +32,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/payu_dimen_10dp"
                 android:text="New Withdraw"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="20sp"
                 android:layout_marginTop="10dp"
                 android:textStyle="bold" />

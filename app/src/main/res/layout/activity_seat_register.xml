@@ -450,7 +450,6 @@
                             android:textSize="15dp"
                             android:textStyle="bold" />
                     </RadioGroup>
-
                 </LinearLayout>
 
                 <Button
@@ -465,8 +464,9 @@
                     android:background="@drawable/border_button"
                     android:fontFamily="@font/lato"
                     android:text="Book Now"
+                    android:textAllCaps="false"
                     android:textAlignment="center"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 

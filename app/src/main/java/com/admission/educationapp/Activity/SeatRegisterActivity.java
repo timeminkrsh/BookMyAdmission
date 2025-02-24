@@ -96,6 +96,7 @@ public class SeatRegisterActivity extends AppCompatActivity {
         }
 
         String above_500 = Bsession.getInstance().getMark_12th(SeatRegisterActivity.this);
+        System.out.println("dhuyg=="+above_500);
         int mark_12 = Integer.parseInt(above_500);
         if (mark_12 > 500) {
             radio_merit.check(R.id.merit_yes);

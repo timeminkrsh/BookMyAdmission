@@ -62,7 +62,7 @@
                     android:layout_weight="1.5"
                     android:lines="2"
                     android:text="Department List "
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     android:textSize="18sp" />
 
                 <ImageView

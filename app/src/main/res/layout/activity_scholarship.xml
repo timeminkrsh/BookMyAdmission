@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     tools:context=".Activity.ScholarshipActivity"
     android:background="@color/coloAccent">
 
@@ -386,7 +387,6 @@
                         android:textColor="@color/red" />
 
                 </LinearLayout>
-
                 <EditText
                     android:id="@+id/edt_ifsc"
                     android:layout_width="match_parent"
@@ -397,9 +397,11 @@
                     android:fontFamily="@font/lato"
                     android:hint="Enter your IFSC code"
                     android:inputType="text"
-                    android:maxLines="3"
+                    android:maxLength="11"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
                     android:textColor="@color/colorTextBlack"
                     android:textSize="16sp" />
+
 
                 <Button
                     android:id="@+id/btn_schapply"
@@ -414,7 +416,7 @@
                     android:fontFamily="@font/lato"
                     android:text="APPLY"
                     android:textAlignment="center"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 

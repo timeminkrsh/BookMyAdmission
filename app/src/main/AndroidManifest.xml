@@ -30,10 +30,12 @@
         android:theme="@style/AppTheme"
         tools:targetApi="31">
         <activity
+            android:name=".Activity.HelpAndSupportActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activity.ReferalActivity"
             android:exported="false"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity
             android:name=".Activity.AnnaUniversityCourseSelectionActivity"
             android:exported="true"
@@ -57,7 +59,8 @@
         <activity
             android:name=".Activity.CounsellingFormActivity"
             android:exported="true"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".Activity.WithdrawHistoryActivity"
             android:exported="true"
@@ -137,11 +140,12 @@
         <activity
             android:name=".Activity.HomeActivity"
             android:exported="true"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".Activity.CourseSelectionActivity"
             android:exported="true"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Activity.SampleActivity"
             android:exported="true"
@@ -149,7 +153,8 @@
         <activity
             android:name=".Activity.RegisterActivity"
             android:exported="true"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".Activity.OTPActivity"
             android:exported="true"

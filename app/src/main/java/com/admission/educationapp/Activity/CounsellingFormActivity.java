@@ -1,5 +1,6 @@
 package com.admission.educationapp.Activity;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -84,6 +85,11 @@ public class CounsellingFormActivity extends AppCompatActivity implements Adapte
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_counselling_form);
+        getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+            }
+        });
         edt_name=findViewById(R.id.edt_name);
         physics_marks=findViewById(R.id.physics_marks);
         expected_institution=findViewById(R.id.expected_institution);
@@ -360,63 +366,7 @@ public class CounsellingFormActivity extends AppCompatActivity implements Adapte
 
     }
 
-    private void coursesList() {
-        final Map<String, String> params = new HashMap<>();
-        String para1 = "?university_id=" + Bsession.getInstance().getuniversity_id(CounsellingFormActivity.this);
-        String baseUrl = ProductConfig.courselist + para1;
-        courselist = new ArrayList<>();
-        progressDialog.show();
-        final StringRequest jsObjRequest = new StringRequest(Request.Method.GET, baseUrl, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                Log.e("Response", response.toString());
-                try {
-                    progressDialog.dismiss();
-                    JSONObject jsonResponse = new JSONObject(response);
-                    if (jsonResponse.has("result") && jsonResponse.getString("result").equals("Success")) {
-                        JSONArray jsonlist = jsonResponse.getJSONArray("list");
-                        for (int j = 0; j < jsonlist.length(); j++) {
-                            JSONObject jsonObject = jsonlist.getJSONObject(j);
-                            CourseModel model = new CourseModel();
-                            model.setId(jsonlist.getJSONObject(j).getString("course_id"));
-                            model.setRadio(jsonlist.getJSONObject(j).getString("name"));
-                            courselist.add(model);
-                        }
-                        LinearLayoutManager layoutManager = new LinearLayoutManager(CounsellingFormActivity.this, LinearLayoutManager.VERTICAL, false);
-                        courses_list.setLayoutManager(layoutManager);
-                        final CoursesAdapter packageListAdapter = new CoursesAdapter(CounsellingFormActivity.this, courselist);
-                        courses_list.setAdapter(packageListAdapter);
-                        courses_list.setHasFixedSize(true);
 
-                        selectedIds = packageListAdapter.getSelectedCourseIds();
-                        // Use the selectedIds as needed (e.g., send to server)
-                        Log.d("Selected Course IDs", selectedIds);
-                        System.out.println("Selected Course IDs==" + selectedIds);
-                        // Add a click listener to your submit button where you can retrieve selected course IDs
-                    } else {
-                        Toast.makeText(CounsellingFormActivity.this, "Course list not found", Toast.LENGTH_SHORT).show();
-                    }
-
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
-        },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        progressDialog.dismiss();
-                        Log.e("Error", error.toString());
-                    }
-                }) {
-            @Override
-            protected Map<String, String> getParams() {
-                return params;
-            }
-        };
-        RequestQueue requestQueue = Volley.newRequestQueue(CounsellingFormActivity.this);
-        requestQueue.add(jsObjRequest);
-    }
 
     private void districtList() {
         final Map<String, String> params = new HashMap<>();
@@ -964,30 +914,7 @@ public class CounsellingFormActivity extends AppCompatActivity implements Adapte
         };
         Volley.newRequestQueue(this).add(jsObjRequest);
         jsObjRequest.setRetryPolicy(new DefaultRetryPolicy(10000, 1, 1.0f));
-
     }
-
-    private void toolbar() {
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), HomeActivity.class));
-                finish();
-            }
-        });
-        getSupportActionBar().setTitle((CharSequence) "Counselling Form ");
-        toolbar.setTitleTextColor(-1);
-    }
-
-    @SuppressLint("MissingSuperCall")
-    @Override
-    public void onBackPressed() {
-        Intent intent = new Intent(CounsellingFormActivity.this,HomeActivity.class);
-        startActivity(intent);
-    }
-
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
@@ -1063,20 +990,6 @@ public class CounsellingFormActivity extends AppCompatActivity implements Adapte
             return selectedCourses;
         }
 
-        public String getSelectedCourseIds() {
-            StringBuilder selectedIds = new StringBuilder();
-            int count = 0;
-            for (int i = 0; i < courseList.size(); i++) {
-                if (selectedItems.get(i, false)) {
-                    if (count > 0) {
-                        selectedIds.append(",");
-                    }
-                    selectedIds.append(courseList.get(i).getId());
-                    count++;
-                }
-            }
-            return selectedIds.toString();
-        }
 
         private int getSelectedItemCount() {
             int count = 0;

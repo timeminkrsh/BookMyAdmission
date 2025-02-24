@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#9DC9FF"
     android:orientation="vertical"
     tools:context=".Activity.CourseSelectionActivity">
 
@@ -38,6 +37,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="20dp"
                 android:visibility="visible"
+                android:gravity="center"
                 android:background="@color/transparent"
                 android:orientation="vertical">
 
@@ -120,7 +120,7 @@
                     android:fontFamily="@font/merienda"
                     android:text="SUBMIT"
                     android:textAlignment="center"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 

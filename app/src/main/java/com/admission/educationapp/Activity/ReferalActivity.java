@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import androidx.activity.EdgeToEdge;
+import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.admission.educationapp.Bsession;
@@ -13,11 +14,17 @@ import com.admission.educationapp.R;
 public class ReferalActivity extends AppCompatActivity {
 
     Button refer,skip;
+    String phone;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_referal);
+
+        Bundle bundle = getIntent().getExtras();
+        if (bundle != null) {
+            phone = bundle.getString("mobile");
+        }
         refer=findViewById(R.id.btn_refer);
         skip=findViewById(R.id.btn_skip);
         refer.setOnClickListener(v -> {
@@ -30,6 +37,8 @@ public class ReferalActivity extends AppCompatActivity {
         });
         skip.setOnClickListener(v ->{
             Intent intent=new Intent(ReferalActivity.this,RegisterActivity.class);
+            intent.putExtra("refer", "");
+            intent.putExtra("mobile", phone);
             startActivity(intent);
         });
     }

@@ -250,7 +250,7 @@
                     android:background="@drawable/border_button"
                     android:text="APPLY"
                     android:textAlignment="center"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 

@@ -60,18 +60,30 @@ public class ProfileActivity extends AppCompatActivity {
         edt_address.setText(address);
         email =Bsession.getInstance().getUser_email(ProfileActivity.this);
         edt_emailaddress.setText(email);
-
         btn_update.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 btn_update.startAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_in));
+              name=edt_name.getText().toString();
+              mobile=edt_phno.getText().toString();
+              email=edt_emailaddress.getText().toString();
+              address=edt_address.getText().toString();
                 if (name.isEmpty()) {
                     edt_name.setError("*Enter your name");
+                    edt_name.requestFocus();
+                } else if (name.length()<3) {
+                    edt_name.setError("*Name must be at least 3 characters");
                     edt_name.requestFocus();
                 } else if (email.isEmpty()) {
                     edt_emailaddress.setError("*Enter your email");
                     edt_emailaddress.requestFocus();
-                } else if (address.isEmpty()) {
+                }else if (!isValidEmail(email)) {
+                    edt_emailaddress.setError("*Enter a valid email");
+                    edt_emailaddress.requestFocus();
+                }  else if (address.isEmpty()) {
                     edt_address.setError("*Enter your address");
+                    edt_address.requestFocus();
+                } else if (address.length()<8) {
+                    edt_address.setError("*Name must be at least 8 characters");
                     edt_address.requestFocus();
                 } else if (name == null || name == "" || email == ""|| email == null || address == null || address == "" ) {
                     Toast.makeText(ProfileActivity.this, "Please enter required information", Toast.LENGTH_SHORT).show();
@@ -83,6 +95,9 @@ public class ProfileActivity extends AppCompatActivity {
 
         toolbar();
     }
+    private boolean isValidEmail(String email) {
+        return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
+    }
 
     public void setUpdate() {
         final Map<String, String> params = new HashMap<>();
@@ -93,6 +108,7 @@ public class ProfileActivity extends AppCompatActivity {
 
         progressDialog.show();
         String baseUrl = ProductConfig.profile + para_str+para_str2+para_str3+para_str4;
+        System.out.println("egy--"+baseUrl);
         StringRequest jsObjRequest = new StringRequest(Request.Method.GET, baseUrl, new Response.Listener<String>() {
             public void onResponse(String response) {
                 Log.e("Response", response.toString());
@@ -116,6 +132,8 @@ public class ProfileActivity extends AppCompatActivity {
                         finish();
                         Toast.makeText(getApplicationContext(), "Profile Update Success", Toast.LENGTH_LONG).show();
                         System.out.println("Response=="+response);
+                        System.out.println("Response=="+Bsession.getInstance().getUser_name(ProfileActivity.this));
+
                     } else {
                         Toast.makeText(getApplicationContext(), "Profile Update Failed", Toast.LENGTH_LONG).show();
                     }

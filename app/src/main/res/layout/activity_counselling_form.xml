@@ -1132,9 +1132,10 @@
                     android:layout_marginBottom="@dimen/payu_dimen_20dp"
                     android:background="@drawable/border_button"
                     android:text="Cutoff Calculation"
+                    android:textAllCaps="false"
                     android:visibility="gone"
                     android:textAlignment="center"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -1313,8 +1314,9 @@
                     android:layout_marginBottom="@dimen/payu_dimen_20dp"
                     android:background="@drawable/border_button"
                     android:text="Submit"
+                    android:textAllCaps="false"
                     android:textAlignment="center"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 

@@ -151,6 +151,7 @@
                     android:focusableInTouchMode="true"
                     android:hint="Enter your parent name"
                     android:inputType="text"
+                    android:importantForAutofill="no"
                     android:textColor="@color/colorTextBlack"
                     android:textSize="15sp"
                     android:textStyle="bold" />
@@ -191,7 +192,7 @@
                     android:hint="Enter your mobile number"
                     android:inputType="phone"
                     android:maxLength="10"
-
+                    android:importantForAutofill="no"
                     android:textColor="@color/colorTextBlack"
                     android:textSize="15sp"
                     android:textStyle="bold" />
@@ -231,6 +232,7 @@
                     android:focusableInTouchMode="true"
                     android:hint="Enter your Email Address"
                     android:inputType="textEmailAddress"
+                    android:autofillHints="emailAddress"
                     android:textColor="@color/colorTextBlack"
                     android:textSize="15sp"
                     android:textStyle="bold" />

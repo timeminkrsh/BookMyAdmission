@@ -98,7 +98,7 @@
                     android:background="@drawable/border_button"
                     android:text="VIEW SEATS"
                     android:textAlignment="center"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
@@ -118,7 +118,7 @@
                         android:layout_marginStart="@dimen/payu_dimen_10dp"
                         android:layout_gravity="center"
                         android:layout_weight="1"
-                        android:textColor="@color/black"
+                        android:textColor="@color/white"
                         android:textSize="15sp" />
 
                     <TextView

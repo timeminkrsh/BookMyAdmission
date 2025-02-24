@@ -83,7 +83,8 @@
                         android:visibility="visible"
                         android:textColor="@color/black"
                         android:textColorHint="@color/black"
-                        android:textSize="18sp" />
+                        android:textSize="18sp"
+                        android:digits="0123456789" />
 
                 </LinearLayout>
 

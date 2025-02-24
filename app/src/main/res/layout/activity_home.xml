@@ -3,7 +3,7 @@
     xmlns:aapt="http://schemas.android.com/aapt"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/drawer_layout"
+    android:id="@+id/content"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:openDrawer="start"
@@ -23,8 +23,8 @@
         android:background="@color/colorWhite"
         android:fitsSystemWindows="false"
         app:headerLayout="@layout/nav_header_main"
-        app:itemIconTint="@color/colorPrimary"
-        app:itemTextColor="@color/colortext"
+        app:itemIconTint="#034177"
+        app:itemTextColor="#AD0C0C0C"
         app:menu="@menu/activity_main_drawer" />
 
 </androidx.drawerlayout.widget.DrawerLayout>

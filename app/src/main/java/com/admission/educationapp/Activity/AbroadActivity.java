@@ -94,24 +94,33 @@ public class AbroadActivity extends AppCompatActivity implements AdapterView.OnI
                 if (name.isEmpty()) {
                     edt_name.setError("*Enter your name");
                     edt_name.requestFocus();
+                } else if (name.length()<3) {
+                    edt_name.setError("*Name must be at least 3 characters");
+                    edt_name.requestFocus();
                 } else if (mobile.isEmpty()) {
                     edt_phno.setError("*Enter your mobile number");
                     edt_phno.requestFocus();
-                } else if (mobile == null ||mobile.length() < 6 || mobile.length() > 13) {
+                } else if (mobile == null ||mobile.length() < 10) {
                     edt_phno.setError("*Enter Valid Mobile Number");
                     edt_phno.requestFocus();
-                } else if (address.isEmpty()) {
-                    edt_address.setError("*Enter your address");
-                    edt_address.requestFocus();
                 }else if (email.isEmpty()) {
                     edt_emailaddress.setError("*Enter your email");
                     edt_emailaddress.requestFocus();
-                }else if (selectedCountryId.isEmpty()) {
-                    selectedCountry.setError("*Enter");
-                    selectedCountry.requestFocus();
-                }else if (selectedCourseId.isEmpty()) {
-                    selectedCourse.setError("*Enter");
+                }else if (!isValidEmail(email)) {
+                    edt_emailaddress.setError("*Enter a valid email");
+                    edt_emailaddress.requestFocus();
+                } else if (address.isEmpty()) {
+                    edt_address.setError("*Enter your address");
+                    edt_address.requestFocus();
+                }else if (address.length()<8) {
+                    edt_address.setError("*Address must be at least 8 characters");
+                    edt_address.requestFocus();
+                } else if (selectedCourseId.isEmpty()) {
+                    selectedCourse.setError("*Select a course");
                     selectedCourse.requestFocus();
+                } else if (selectedCountryId.isEmpty()) {
+                    selectedCountry.setError("*Select a country");
+                    selectedCountry.requestFocus();
                 } else if (name == null || name == "" || email == ""|| email == null || mobile == null || mobile == "" || address == null || address == ""
                         || selectedCourseId == null || selectedCourseId == ""|| selectedCountryId == null || selectedCountryId == "") {
                     Toast.makeText(AbroadActivity.this, "Please enter required information", Toast.LENGTH_SHORT).show();
@@ -127,6 +136,9 @@ public class AbroadActivity extends AppCompatActivity implements AdapterView.OnI
 
     }
 
+    private boolean isValidEmail(String email) {
+        return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
+    }
     private void courseList() {
         final Map<String, String> params = new HashMap<>();
         String baseUrl = ProductConfig.abroad_courselist;
